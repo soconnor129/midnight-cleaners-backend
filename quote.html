@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get a Quote - Midnight Cleaners</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Premium Quote Engine</h1>
+        <p class="subtitle">Instant quote based on your needs</p>
+        <p class="estimate-label">Estimate: <span id="quoteAmount">$0.00</span> / <span id="frequencyLabel">Monthly</span></p>
+    </header>
+
+    <main>
+        <form id="quoteForm">
+            <fieldset>
+                <legend>1. Property Profile</legend>
+                <label>Select Property Class:</label><br>
+                <input type="radio" name="propertyClass" value="residential" checked> Residential
+                <input type="radio" name="propertyClass" value="commercial"> Commercial<br><br>
+
+                <div id="residentialTypes">
+                    <label>Residential Type:</label><br>
+                    <input type="radio" name="resType" value="single"> Single-family<br>
+                    <input type="radio" name="resType" value="duplex"> Multi-unit (duplex, triplex)<br>
+                    <input type="radio" name="resType" value="apartment"> Apartment Complex<br><br>
+                </div>
+
+                <div id="commercialTypes" style="display:none;">
+                    <label>Commercial Type:</label><br>
+                    <input type="radio" name="comType" value="retail"> Retail<br>
+                    <input type="radio" name="comType" value="office"> Office Building<br>
+                    <input type="radio" name="comType" value="gov"> Government Facility<br>
+                    <input type="radio" name="comType" value="school"> School / University<br>
+                    <input type="radio" name="comType" value="medical"> Medical Facility<br>
+                    <input type="radio" name="comType" value="warehouse"> Warehouse<br><br>
+                </div>
+            
+    <div id="squareFootageSection">
+        <label for="squareFootage">Square Footage:</label><br>
+        <input type="number" name="squareFootage" id="squareFootage" placeholder="e.g. 1500"><br><br>
+    </div>
+
+    <div id="residentialAddOns" style="display:none;">
+        <label>Deep Clean Add-Ons (Residential):</label><br>
+        <input type="checkbox" name="addon" value="fridge"> Fridge Cleaning<br>
+        <input type="checkbox" name="addon" value="stove"> Stove/Oven Cleaning<br>
+        <input type="checkbox" name="addon" value="kitchen"> Kitchen Deep Clean<br>
+        <input type="checkbox" name="addon" value="bathroom"> Bathroom Deep Clean<br>
+        <input type="checkbox" name="addon" value="bedroom"> Bedroom Deep Clean<br><br>
+    </div>
+
+    <div id="commercialAddOns" style="display:none;">
+        <label>Door-to-Dumpster Trash Removal:</label><br>
+        <input type="number" name="tenantDoors" id="tenantDoors" placeholder="Number of doors"><br>
+        <small>$3 per tenant door</small><br><br>
+    </div>
+    </fieldset>
+    
+
+            <fieldset>
+                <legend>2. Property Specs</legend>
+                <label>Street Address:</label>
+                <input type="text" name="address" required><br><br>
+
+                <label>Total Floors:</label>
+                <input type="number" name="floors" min="1"><br><br>
+
+                <label>Units/Suites (for multi-unit or commercial):</label>
+                <input type="number" name="units" min="0"><br><br>
+
+                <label>Dumpsters On-site:</label>
+                <select name="dumpsters">
+                    <option value="0">None</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3+</option>
+                </select><br><br>
+
+                <label>Service Frequency:</label>
+                <select name="frequency">
+                    <option value="weekly">Weekly</option>
+                    <option value="3x">3x per week</option>
+                    <option value="nightly">Nightly</option>
+                </select><br><br>
+            
+    <div id="squareFootageSection">
+        <label for="squareFootage">Square Footage:</label><br>
+        <input type="number" name="squareFootage" id="squareFootage" placeholder="e.g. 1500"><br><br>
+    </div>
+
+    <div id="residentialAddOns" style="display:none;">
+        <label>Deep Clean Add-Ons (Residential):</label><br>
+        <input type="checkbox" name="addon" value="fridge"> Fridge Cleaning<br>
+        <input type="checkbox" name="addon" value="stove"> Stove/Oven Cleaning<br>
+        <input type="checkbox" name="addon" value="kitchen"> Kitchen Deep Clean<br>
+        <input type="checkbox" name="addon" value="bathroom"> Bathroom Deep Clean<br>
+        <input type="checkbox" name="addon" value="bedroom"> Bedroom Deep Clean<br><br>
+    </div>
+
+    <div id="commercialAddOns" style="display:none;">
+        <label>Door-to-Dumpster Trash Removal:</label><br>
+        <input type="number" name="tenantDoors" id="tenantDoors" placeholder="Number of doors"><br>
+        <small>$3 per tenant door</small><br><br>
+    </div>
+    </fieldset>
+    
+
+            <fieldset>
+                <legend>3. Add-On Services</legend>
+                <label><strong>Residential Services:</strong></label><br>
+                <input type="checkbox" name="addon" data-price="25"> Shared Area Cleaning<br>
+                <input type="checkbox" name="addon" data-price="125"> Dumpster Cleaning<br>
+                <input type="checkbox" name="addon" data-price="100"> Move-in/Move-out Cleaning<br>
+                <input type="checkbox" name="addon" data-price="40"> Pet Odor Cleaning<br>
+                <input type="checkbox" name="addon" data-price="45"> Snow/Ice Salting<br><br>
+
+                <label><strong>Commercial Services:</strong></label><br>
+                <input type="checkbox" name="addon" data-price="150"> Lobby Detailing<br>
+                <input type="checkbox" name="addon" data-price="200"> Restroom Maintenance<br>
+                <input type="checkbox" name="addon" data-price="100"> Disinfection Protocol<br>
+                <input type="checkbox" name="addon" data-price="250"> Pressure Washing<br>
+                <label>Door-to-Dumpster Trash Removal (per door):</label>
+                <input type="number" name="trashDoors" min="0" data-price="3"><br><br>
+            
+    <div id="squareFootageSection">
+        <label for="squareFootage">Square Footage:</label><br>
+        <input type="number" name="squareFootage" id="squareFootage" placeholder="e.g. 1500"><br><br>
+    </div>
+
+    <div id="residentialAddOns" style="display:none;">
+        <label>Deep Clean Add-Ons (Residential):</label><br>
+        <input type="checkbox" name="addon" value="fridge"> Fridge Cleaning<br>
+        <input type="checkbox" name="addon" value="stove"> Stove/Oven Cleaning<br>
+        <input type="checkbox" name="addon" value="kitchen"> Kitchen Deep Clean<br>
+        <input type="checkbox" name="addon" value="bathroom"> Bathroom Deep Clean<br>
+        <input type="checkbox" name="addon" value="bedroom"> Bedroom Deep Clean<br><br>
+    </div>
+
+    <div id="commercialAddOns" style="display:none;">
+        <label>Door-to-Dumpster Trash Removal:</label><br>
+        <input type="number" name="tenantDoors" id="tenantDoors" placeholder="Number of doors"><br>
+        <small>$3 per tenant door</small><br><br>
+    </div>
+    </fieldset>
+    
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; Midnight Cleaners</p>
+    </footer>
+</body>
+</html>
